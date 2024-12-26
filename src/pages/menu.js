@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 
 function Menu(){
     return(
@@ -18,7 +19,7 @@ function Menu(){
                             <li><a href="#">Pages</a>
                                 <ul className="dropdown">
                                     
-                                    <li><a href="./about.html">About Us</a></li>
+                                    <li><Link to="/about">About Us</Link></li>
                                     <li><a href="./shop-details.html">Shop Details</a></li>
                                     <li><a href="./shopping-cart.html">Shopping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
