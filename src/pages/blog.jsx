@@ -1,13 +1,17 @@
 import React, { Fragment } from 'react';
-import Menu from './menu';
+import Menu from '../component/menu';
+import Topheader from '../component/topheader';
+import Header from '../component/header';
 
 function Blog(){
     return(
         <Fragment>
             <div>
-
+                <Header/>
+                <Topheader/>
+                <Menu/>
     {/* <!-- Offcanvas Menu Begin --> */}
-    <div class="offcanvas-menu-overlay"></div>
+    {/* <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
             <div class="offcanvas__links">
@@ -33,43 +37,10 @@ function Blog(){
         <div class="offcanvas__text">
             <p>Free shipping, 30-day return or refund guarantee.</p>
         </div>
-    </div>
-    {/* <!-- Offcanvas Menu End -->
+    </div> */}
+    {/* <!-- Offcanvas Menu End --> */}
 
-    <!-- Header Section Begin --> */}
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-7">
-                        <div class="header__top__left">
-                            <p>Free shipping, 30-day return or refund guarantee.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-5">
-                        <div class="header__top__right">
-                            <div class="header__top__links">
-                                <a href="#">Sign in</a>
-                                <a href="#">FAQs</a>
-                            </div>
-                            <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
-                                <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <Menu/>
-    </header>
-    {/* <!-- Header Section End -->
-
-    <!-- Breadcrumb Section Begin --> */}
+    {/* <!-- Breadcrumb Section Begin --> */}
     <section class="breadcrumb-blog set-bg" data-setbg="img/breadcrumb-bg.jpg">
         <div class="container">
             <div class="row">

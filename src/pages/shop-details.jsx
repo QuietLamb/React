@@ -1,5 +1,8 @@
 import React, { Fragment } from 'react';
 import ProductSection from './ProductSection';
+import Menu from '../component/menu';
+import Topheader from '../component/topheader';
+import Header from '../component/header';
 
 function ShopDetails(){
     return(
@@ -36,7 +39,7 @@ function ShopDetails(){
     {/* <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin --> */}
-    <header className="header">
+    {/* <header className="header">
         <div className="header__top">
             <div className="container">
                 <div className="row">
@@ -101,7 +104,10 @@ function ShopDetails(){
             </div>
             <div className="canvas__open"><i className="fa fa-bars"></i></div>
         </div>
-    </header>
+    </header> */}
+    <Topheader/>
+    <Header/>
+    <Menu/>
     {/* <!-- Header Section End -->
 
     <!-- Shop Details Section Begin --> */}

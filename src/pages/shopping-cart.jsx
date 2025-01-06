@@ -1,4 +1,8 @@
 import React, { Fragment } from 'react';
+import Menu from '../component/menu';
+import Topheader from '../component/topheader';
+import Header from '../component/header';
+import { Link } from 'react-router-dom';
 
 function ShoppingCart(){
     return(
@@ -35,7 +39,7 @@ function ShoppingCart(){
     {/* <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin --> */}
-    <header className="header">
+    {/* <header className="header">
         <div className="header__top">
             <div className="container">
                 <div className="row">
@@ -100,7 +104,10 @@ function ShoppingCart(){
             </div>
             <div className="canvas__open"><i className="fa fa-bars"></i></div>
         </div>
-    </header>
+    </header> */}
+    <Topheader/>
+    <Header/>
+    <Menu/>
     {/* <!-- Header Section End -->
 
     <!-- Breadcrumb Section Begin --> */}
@@ -248,7 +255,7 @@ function ShoppingCart(){
                             <li>Subtotal <span>$ 169.50</span></li>
                             <li>Total <span>$ 169.50</span></li>
                         </ul>
-                        <a href="#" className="primary-btn">Proceed to checkout</a>
+                        <Link to="/checkout" className="primary-btn">Proceed to checkout</Link>
                     </div>
                 </div>
             </div>

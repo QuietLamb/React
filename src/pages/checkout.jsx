@@ -1,4 +1,8 @@
 import React, { Fragment } from 'react';
+import Menu from '../component/menu';
+import Topheader from '../component/topheader';
+import Header from '../component/header';
+import PayPalCheckout from '../component/Paypal';
 
 function Checkout(){
     return(
@@ -35,7 +39,7 @@ function Checkout(){
     {/* <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin --> */}
-    <header className="header">
+    {/* <header className="header">
         <div className="header__top">
             <div className="container">
                 <div className="row">
@@ -100,7 +104,10 @@ function Checkout(){
             </div>
             <div className="canvas__open"><i className="fa fa-bars"></i></div>
         </div>
-    </header>
+    </header> */}
+    <Topheader/>
+    <Header/>
+    <Menu/>
     {/* <!-- Header Section End -->
 
     <!-- Breadcrumb Section Begin --> */}
@@ -245,6 +252,7 @@ function Checkout(){
                                     </label>
                                 </div>
                                 <button type="submit" className="site-btn">PLACE ORDER</button>
+                                <PayPalCheckout/>
                             </div>
                         </div>
                     </div>

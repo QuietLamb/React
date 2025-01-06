@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import Menu from './menu';
+import Menu from '../component/menu';
 
 function About(){
     return(

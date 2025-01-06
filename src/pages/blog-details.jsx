@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
-import Menu from './menu';
+import Menu from '../component/menu';
+import Topheader from '../component/topheader';
+import Header from '../component/header';
 
 function Blog_Details(){
     return(
@@ -36,7 +38,7 @@ function Blog_Details(){
     {/* <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin --> */}
-    <header class="header">
+    {/* <header class="header">
         <div class="header__top">
             <div class="container">
                 <div class="row">
@@ -65,7 +67,10 @@ function Blog_Details(){
             </div>
         </div>
         <Menu/>
-    </header>
+    </header> */}
+    <Topheader/>
+    <Header/>
+    <Menu/>
     {/* <!-- Header Section End -->
 
     <!-- Blog Details Hero Begin --> */}

@@ -1,12 +1,14 @@
 import React, { Fragment } from 'react';
-import ProductSection from './ProductSection';
+import Topheader from '../component/topheader';
+import Header from '../component/header';
+import Menu from '../component/menu';
 
-function Shop(){
+function Contact(){
     return(
         <Fragment>
             <div>
     {/* <!-- Offcanvas Menu Begin --> */}
-    <div className="offcanvas-menu-overlay"></div>
+    {/* <div className="offcanvas-menu-overlay"></div>
     <div className="offcanvas-menu-wrapper">
         <div className="offcanvas__option">
             <div className="offcanvas__links">
@@ -32,11 +34,14 @@ function Shop(){
         <div className="offcanvas__text">
             <p>Free shipping, 30-day return or refund guarantee.</p>
         </div>
-    </div>
+    </div> */}
+    <Topheader/>
+    <Header/>
+    <Menu/>
     {/* <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin --> */}
-    <header className="header">
+    {/* <header className="header">
         <div className="header__top">
             <div className="container">
                 <div className="row">
@@ -75,7 +80,7 @@ function Shop(){
                     <nav className="header__menu mobile-menu">
                         <ul>
                             <li><a href="./index.html">Home</a></li>
-                            <li className="active"><a href="./shop.html">Shop</a></li>
+                            <li><a href="./shop.html">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul className="dropdown">
                                     <li><a href="./about.html">About Us</a></li>
@@ -86,7 +91,7 @@ function Shop(){
                                 </ul>
                             </li>
                             <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contacts</a></li>
+                            <li className="active"><a href="./contact.html">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -101,32 +106,57 @@ function Shop(){
             </div>
             <div className="canvas__open"><i className="fa fa-bars"></i></div>
         </div>
-    </header>
+    </header> */}
     {/* <!-- Header Section End -->
 
-    <!-- Breadcrumb Section Begin --> */}
-    <section className="breadcrumb-option">
+    <!-- Contact Section Begin --> */}
+    <section className="contact spad">
         <div className="container">
             <div className="row">
-                <div className="col-lg-12">
-                    <div className="breadcrumb__text">
-                        <h4>Shop</h4>
-                        <div className="breadcrumb__links">
-                            <a href="./index.html">Home</a>
-                            <span>Shop</span>
+                <div className="col-lg-6 col-md-6">
+                    <div className="contact__text">
+                        <div className="section-title">
+                            <span>Information</span>
+                            <h2>Contact Us</h2>
+                            <p>As you might expect of a company that began as a high-end interiors contractor, we pay
+                                strict attention.</p>
                         </div>
+                        <ul>
+                            <li>
+                                <h4>America</h4>
+                                <p>195 E Parker Square Dr, Parker, CO 801 <br />+43 982-314-0958</p>
+                            </li>
+                            <li>
+                                <h4>France</h4>
+                                <p>109 Avenue Léon, 63 Clermont-Ferrand <br />+12 345-423-9893</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="col-lg-6 col-md-6">
+                    <div className="contact__form">
+                        <form action="#">
+                            <div className="row">
+                                <div className="col-lg-6">
+                                    <input type="text" placeholder="Name"/>
+                                </div>
+                                <div className="col-lg-6">
+                                    <input type="text" placeholder="Email"/>
+                                </div>
+                                <div className="col-lg-12">
+                                    <textarea placeholder="Message"></textarea>
+                                    <button type="submit" className="site-btn">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    {/* <!-- Breadcrumb Section End --> */}
+    {/* <!-- Contact Section End -->
 
-
-
-    <ProductSection/>
-
-    {/* <!-- Footer Section Begin --> */}
+    <!-- Footer Section Begin --> */}
     <footer className="footer">
         <div className="container">
             <div className="row">
@@ -183,7 +213,7 @@ function Shop(){
                                 document.write(new Date().getFullYear());
                             </script>2020
                             All rights reserved | This template is made with <i className="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                         </p>
                         {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
                     </div>
@@ -207,4 +237,4 @@ function Shop(){
     );
 }
 
-export default Shop;
+export default Contact;
