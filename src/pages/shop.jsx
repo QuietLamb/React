@@ -36,8 +36,8 @@ function Shop(){
             <p>Free shipping, 30-day return or refund guarantee.</p>
         </div>
     </div> */}
-    <Topheader/>
-    <Header/>
+    {/* <Topheader/>
+    <Header/> */}
     <Menu/>
     {/* <!-- Offcanvas Menu End -->
 

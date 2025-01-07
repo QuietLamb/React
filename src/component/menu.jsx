@@ -1,7 +1,11 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "./CartContext";
 
 function Menu(){
+
+    const {cart} = useCart();
+
     return(
         <div className="container">
             <div className="row">
@@ -26,7 +30,7 @@ function Menu(){
                             </li>
                             <li><Link to="/blog">Blog</Link></li>
                             <li><Link to="/contact">Contacts</Link></li>
-                            
+
                         </ul>
                     </nav>
                 </div>
@@ -34,9 +38,9 @@ function Menu(){
                     <div className="header__nav__option">
                         <a href="#" className="search-switch"><img src="ASSETS/img/icon/search.png" alt=""/></a>
                         <a href="#"><img src="ASSETS/img/icon/heart.png" alt=""/></a>
-                        <Link to="/shopping-cart"><img src="ASSETS/img/icon/cart.png" alt=""/> <span>0</span></Link>
+                        <Link to="/shopping-cart"><img src="ASSETS/img/icon/cart.png" alt=""/> <span>{cart.length}</span></Link>
                         <div className="price"></div>
-                        
+
                     </div>
                 </div>
             </div>

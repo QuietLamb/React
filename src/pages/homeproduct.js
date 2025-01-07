@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./homeproduct.css";
+import { useCart } from "../component/CartContext";
 
 const Homeproduct = () => {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  const {addToCart} = useCart();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -26,8 +27,8 @@ const Homeproduct = () => {
     fetchProducts();
   }, []);
 
-  const addToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]);
+  const handleAddToCart = (product) => {
+    addToCart(product);
   };
 
   if (loading) return <p>Loading products...</p>;
@@ -53,7 +54,7 @@ const Homeproduct = () => {
               <p className="product-price">${product.price}</p>
               <button
                 className="add-to-cart-button"
-                onClick={() => addToCart(product)}
+                onClick={() => handleAddToCart(product)}
               >
                 Add to Cart
               </button>
@@ -75,7 +76,7 @@ const Homeproduct = () => {
               <p className="product-price">${product.price}</p>
               <button
                 className="add-to-cart-button"
-                onClick={() => addToCart(product)}
+                onClick={() => handleAddToCart(product)}
               >
                 Add to Cart
               </button>

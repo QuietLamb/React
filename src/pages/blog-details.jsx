@@ -68,8 +68,8 @@ function Blog_Details(){
         </div>
         <Menu/>
     </header> */}
-    <Topheader/>
-    <Header/>
+    {/* <Topheader/>
+    <Header/> */}
     <Menu/>
     {/* <!-- Header Section End -->
 

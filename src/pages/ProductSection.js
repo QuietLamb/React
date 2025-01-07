@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./ProductSection.css";
+import { useCart } from "../component/CartContext";
 
 const ProductSection = () => {
-  const [products, setProducts] = useState([]); 
-  const [loading, setLoading] = useState(true); 
-  const [error, setError] = useState(null); 
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const { addToCart } = useCart();
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   useEffect(() => {
@@ -25,6 +27,10 @@ const ProductSection = () => {
     fetchProducts();
   }, []);
 
+  const handleAddToCart = (product) => {
+    addToCart(product);
+  };
+
   if (loading) return <p>Loading products...</p>;
   if (error) return <p>Error: {error}</p>;
 
@@ -34,9 +40,9 @@ const ProductSection = () => {
     <div className="product-section container-xxl container-xl container-lg container-md container-sm">
       <h2>Best Seller</h2>
 
-      
+
       <select
-        onChange={(e) => setSelectedCategory(e.target.value)} 
+        onChange={(e) => setSelectedCategory(e.target.value)}
         value={selectedCategory}
       >
         <option value="all">All Categories</option>
@@ -59,11 +65,12 @@ const ProductSection = () => {
             <p className="product-price">${product.price}</p>
             <button
               className="product-button"
-              onClick={() => console.log(`Added ${product.title} to cart`)}
+              onClick={() => handleAddToCart(product)}
+              // onClick={() => console.log(`Added ${product.title} to cart`)}
             >
               Buy Now
             </button>
-            
+
           </div>
         ))}
       </div>

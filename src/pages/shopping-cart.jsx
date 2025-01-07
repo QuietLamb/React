@@ -2,15 +2,22 @@ import React, { Fragment } from 'react';
 import Menu from '../component/menu';
 import Topheader from '../component/topheader';
 import Header from '../component/header';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { useCart } from '../component/CartContext';
+import PayPal from '../component/Mypaypal';
 
 function ShoppingCart(){
+
+    const {cart, removeFromCart} = useCart();
+
+    const subtotal = cart.reduce((total, product) => total + product.price * product.quantity, 0);
+
     return(
         <Fragment>
             <div>
     {/* <!-- Offcanvas Menu Begin --> */}
     <div className="offcanvas-menu-overlay"></div>
-    <div className="offcanvas-menu-wrapper">
+    {/* <div className="offcanvas-menu-wrapper">
         <div className="offcanvas__option">
             <div className="offcanvas__links">
                 <a href="#">Sign in</a>
@@ -35,7 +42,7 @@ function ShoppingCart(){
         <div className="offcanvas__text">
             <p>Free shipping, 30-day return or refund guarantee.</p>
         </div>
-    </div>
+    </div> */}
     {/* <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin --> */}
@@ -105,8 +112,8 @@ function ShoppingCart(){
             <div className="canvas__open"><i className="fa fa-bars"></i></div>
         </div>
     </header> */}
-    <Topheader/>
-    <Header/>
+    {/* <Topheader/>
+    <Header/> */}
     <Menu/>
     {/* <!-- Header Section End -->
 
@@ -145,27 +152,38 @@ function ShoppingCart(){
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td className="product__cart__item">
-                                        <div className="product__cart__item__pic">
-                                            <img src="ASSETS/img/shopping-cart/cart-1.jpg" alt=""/>
-                                        </div>
-                                        <div className="product__cart__item__text">
-                                            <h6>T-shirt Contrast Pocket</h6>
-                                            <h5>$98.49</h5>
-                                        </div>
-                                    </td>
-                                    <td className="quantity__item">
-                                        <div className="quantity">
-                                            <div className="pro-qty-2">
-                                                <input type="text" value="1"/>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="cart__price">$ 30.00</td>
-                                    <td className="cart__close"><i className="fa fa-close"></i></td>
-                                </tr>
-                                <tr>
+                                {cart.length === 0 ? (
+                                    <tr>
+                                        <td colSpan="4" style={{ textAlign: 'center' }}>
+                                            Your cart is empty.
+                                        </td>
+                                    </tr>
+                                ) : (
+                                    cart.map((product) => (
+                                        <tr key={product.id}>
+                                            <td className="product__cart__item">
+                                                <div className="product__cart__item__pic">
+                                                    <img src={product.image} alt="" style={{width: '100px', height: '150px', objectFit: 'contain', padding: '5px'}}/>
+                                                </div>
+                                                <div className="product__cart__item__text">
+                                                    <h6>{product.title}</h6>
+                                                    <h5>${product.price}</h5>
+                                                </div>
+                                            </td>
+                                            <td className="quantity__item">
+                                                <div className="quantity">
+                                                    <div className="pro-qty-2">
+                                                        <input type="text" value={product.quantity} readOnly/>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td className="cart__price">${(product.price * product.quantity).toFixed(2)}</td>
+                                            <td className="cart__close" style={{ cursor: 'pointer' }} onClick={() => removeFromCart(product.id)}><i className="fa fa-close"></i></td>
+                                        </tr>
+                                    ))
+                                )}
+
+                                {/* <tr>
                                     <td className="product__cart__item">
                                         <div className="product__cart__item__pic">
                                             <img src="ASSETS/img/shopping-cart/cart-2.jpg" alt=""/>
@@ -224,7 +242,7 @@ function ShoppingCart(){
                                     </td>
                                     <td className="cart__price">$ 30.00</td>
                                     <td className="cart__close"><i className="fa fa-close"></i></td>
-                                </tr>
+                                </tr> */}
                             </tbody>
                         </table>
                     </div>
@@ -252,10 +270,11 @@ function ShoppingCart(){
                     <div className="cart__total">
                         <h6>Cart total</h6>
                         <ul>
-                            <li>Subtotal <span>$ 169.50</span></li>
-                            <li>Total <span>$ 169.50</span></li>
+                            <li>Subtotal <span>$ {subtotal}</span></li>
+                            <li>Total <span>$ {subtotal}</span></li>
                         </ul>
-                        <Link to="/checkout" className="primary-btn">Proceed to checkout</Link>
+                        <PayPal total={subtotal}/>
+                        {/* <Link to="/checkout" className="primary-btn">Proceed to checkout</Link> */}
                     </div>
                 </div>
             </div>

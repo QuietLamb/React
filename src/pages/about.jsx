@@ -8,7 +8,7 @@ function About(){
 
     {/* <!-- Offcanvas Menu Begin --> */}
     <div className="offcanvas-menu-overlay"></div>
-    <div className="offcanvas-menu-wrapper">
+    {/* <div className="offcanvas-menu-wrapper">
         <div className="offcanvas__option">
             <div className="offcanvas__links">
                 <a href="#">Sign in</a>
@@ -33,11 +33,11 @@ function About(){
         <div className="offcanvas__text">
             <p>Free shipping, 30-day return or refund guarantee.</p>
         </div>
-    </div>
+    </div> */}
     {/* <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin --> */}
-    <header className="header">
+    {/* <header className="header">
         <div className="header__top">
             <div className="container">
                 <div className="row">
@@ -65,8 +65,9 @@ function About(){
                 </div>
             </div>
         </div>
-        <Menu/>
-    </header>
+        
+    </header> */}
+    <Menu/>
     {/* <!-- Header Section End -->
 
     <!-- Breadcrumb Section Begin --> */}

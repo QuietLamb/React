@@ -7,8 +7,8 @@ function Blog(){
     return(
         <Fragment>
             <div>
-                <Header/>
-                <Topheader/>
+                {/* <Header/>
+                <Topheader/> */}
                 <Menu/>
     {/* <!-- Offcanvas Menu Begin --> */}
     {/* <div class="offcanvas-menu-overlay"></div>

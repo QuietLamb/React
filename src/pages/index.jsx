@@ -7,12 +7,12 @@ import Header from '../component/header';
 const Index = () => {
     return(
         <div>
-            <TopHeader/>
+            {/* <TopHeader/> */}
             {/* <!-- Offcanvas Menu Begin --> */}
             {/* <!-- Offcanvas Menu End -->
 
             <!-- Header Section Begin --> */}
-            <Header/>
+            {/* <Header/> */}
             <Menu/>
             {/* <!-- Header Section End -->
 

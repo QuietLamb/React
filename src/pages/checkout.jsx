@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import Menu from '../component/menu';
 import Topheader from '../component/topheader';
 import Header from '../component/header';
-import PayPalCheckout from '../component/Paypal';
 
 function Checkout(){
     return(
@@ -10,7 +9,7 @@ function Checkout(){
             <div>
     {/* <!-- Offcanvas Menu Begin --> */}
     <div className="offcanvas-menu-overlay"></div>
-    <div className="offcanvas-menu-wrapper">
+    {/* <div className="offcanvas-menu-wrapper">
         <div className="offcanvas__option">
             <div className="offcanvas__links">
                 <a href="#">Sign in</a>
@@ -35,7 +34,7 @@ function Checkout(){
         <div className="offcanvas__text">
             <p>Free shipping, 30-day return or refund guarantee.</p>
         </div>
-    </div>
+    </div> */}
     {/* <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin --> */}
@@ -105,8 +104,8 @@ function Checkout(){
             <div className="canvas__open"><i className="fa fa-bars"></i></div>
         </div>
     </header> */}
-    <Topheader/>
-    <Header/>
+    {/* <Topheader/>
+    <Header/> */}
     <Menu/>
     {/* <!-- Header Section End -->
 
@@ -252,7 +251,6 @@ function Checkout(){
                                     </label>
                                 </div>
                                 <button type="submit" className="site-btn">PLACE ORDER</button>
-                                <PayPalCheckout/>
                             </div>
                         </div>
                     </div>

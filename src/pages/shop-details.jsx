@@ -10,7 +10,7 @@ function ShopDetails(){
             <div>
     {/* <!-- Offcanvas Menu Begin --> */}
     <div className="offcanvas-menu-overlay"></div>
-    <div className="offcanvas-menu-wrapper">
+    {/* <div className="offcanvas-menu-wrapper">
         <div className="offcanvas__option">
             <div className="offcanvas__links">
                 <a href="#">Sign in</a>
@@ -35,7 +35,7 @@ function ShopDetails(){
         <div className="offcanvas__text">
             <p>Free shipping, 30-day return or refund guarantee.</p>
         </div>
-    </div>
+    </div> */}
     {/* <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin --> */}
@@ -105,8 +105,8 @@ function ShopDetails(){
             <div className="canvas__open"><i className="fa fa-bars"></i></div>
         </div>
     </header> */}
-    <Topheader/>
-    <Header/>
+    {/* <Topheader/>
+    <Header/> */}
     <Menu/>
     {/* <!-- Header Section End -->
 
